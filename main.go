@@ -149,8 +149,8 @@ func main() {
 				v.JS("/static/htmx.min.js", v.Attr{"defer": true}),
 
 				v.Title(nil,
-					v.If(filename == "", v.Text("remark")),
-					v.If(filename != "", v.Text(fmt.Sprintf("remark - %s", filename))),
+					v.If(filename == "", v.Text("premark")),
+					v.If(filename != "", v.Text(fmt.Sprintf("premark | %s", filename))),
 				),
 			),
 			v.Body(v.Attr{
@@ -300,7 +300,7 @@ func main() {
 	})
 
 	// Server
-	fmt.Printf("remark running at %s\n", baseURL)
+	fmt.Printf("premark running at %s\n", baseURL)
 	if err := http.ListenAndServe(addr, router); err != nil {
 		fmt.Println("error running server", err)
 		os.Exit(1)

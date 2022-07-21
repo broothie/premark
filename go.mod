@@ -1,4 +1,4 @@
-module github.com/broothie/remark
+module github.com/broothie/premark
 
 go 1.18
 
